@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import buildspaceLogo from '../assets/buildspace-logo.png';
+import github from '../assets/github.png';
 import { useState } from 'react';
 
 const Home = () => {
@@ -54,23 +54,38 @@ const callGenerateEndpoint = async () => {
           />
           {/* New code added here */}
           <div className="prompt-buttons">
-            <a className="generate-button" onClick={callGenerateEndpoint}>
-              <div className="generate">
-                <p>Generate</p>
-              </div>
-            </a>
-          </div>
+  <a
+    className={isGenerating ? 'generate-button loading' : 'generate-button'}
+    onClick={callGenerateEndpoint}
+  >
+    <div className="generate">
+    {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
+    </div>
+  </a>
+</div>
+          {apiOutput && (
+  <div className="output">
+    <div className="output-header-container">
+      <div className="output-header">
+        <h3>Output</h3>
+      </div>
+    </div>
+    <div className="output-content">
+      <p>{apiOutput}</p>
+    </div>
+  </div>
+)}
         </div>
       </div>
       <div className="badge-container grow">
         <a
-          href="https://buildspace.so/builds/ai-writer"
+          href="https://github.com/AazimAnish"
           target="_blank"
           rel="noreferrer"
         >
           <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
+            <Image src={github} alt="github logo" />
+            {/* <p>build space</p> */}
           </div>
         </a>
       </div>

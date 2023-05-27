@@ -245,15 +245,15 @@ textarea {
 }
 
 .badge img {
-    width: 21px;
-    height: 17px;
+    width: 37.06px; /*21*/
+    height: 30px; /*17*/
     image-rendering: pixelated;
     flex-shrink: 0;
     fill: black;
     color: black;
     transform: none;
     transform-origin: 50% 50% 0px;
-    padding-right: 5px;
+    /* padding-right: 5px; */
 }
 
 .badge p {
